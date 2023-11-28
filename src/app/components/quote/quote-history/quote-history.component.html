@@ -1,0 +1,33 @@
+<!-- quote-history.component.html -->
+
+<div class="quote-history-container">
+  <h2>Quote History</h2>
+
+  <table>
+    <thead>
+    <tr>
+      <th>Quote ID</th>
+      <th>Origin Location</th>
+      <th>Destination Location</th>
+      <th>Cargo Type</th>
+      <th>Quantity</th>
+      <th>Status</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let quote of quotes">
+      <td>{{ quote.id }}</td>
+      <td>{{ quote.originLocation }}</td>
+      <td>{{ quote.destinationLocation }}</td>
+      <td>{{ quote.cargoType }}</td>
+      <td>{{ quote.quantity }}</td>
+      <td>{{ quote.status }}</td>
+      <td>
+        <button (click)="viewQuoteDetails(quote.id)">View Details</button>
+        <button (click)="editQuote(quote.id)" *ngIf="quote.status === 'submitted'">Edit</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

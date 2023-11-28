@@ -1,0 +1,21 @@
+<!-- user-profile.component.html -->
+
+<div class="user-profile-container">
+  <h2>User Profile</h2>
+
+  <div class="profile-details">
+    <div>
+      <label>Name:</label>
+      <span>{{ user.name }}</span>
+    </div>
+
+    <div>
+      <label>Email:</label>
+      <span>{{ user.email }}</span>
+    </div>
+
+    <!-- Add any additional profile details as needed -->
+  </div>
+
+  <button (click)="editProfile()">Edit Profile</button>
+</div>

@@ -1,0 +1,34 @@
+<!-- quote-request.component.html -->
+
+<div class="quote-request-container">
+  <h2>Submit Spot Freight Quote Request</h2>
+
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="originLocation">Origin Location</label>
+      <input type="text" id="originLocation" name="originLocation" [(ngModel)]="quote.originLocation" required>
+    </div>
+
+    <div class="form-group">
+      <label for="destinationLocation">Destination Location</label>
+      <input type="text" id="destinationLocation" name="destinationLocation" [(ngModel)]="quote.destinationLocation" required>
+    </div>
+
+    <div class="form-group">
+      <label for="cargoType">Cargo Type</label>
+      <input type="text" id="cargoType" name="cargoType" [(ngModel)]="quote.cargoType" required>
+    </div>
+
+    <div class="form-group">
+      <label for="quantity">Quantity</label>
+      <input type="number" id="quantity" name="quantity" [(ngModel)]="quote.quantity" required>
+    </div>
+
+    <div class="form-group">
+      <label for="specialRequirements">Special Requirements</label>
+      <textarea id="specialRequirements" name="specialRequirements" [(ngModel)]="quote.specialRequirements"></textarea>
+    </div>
+
+    <button type="submit">Submit Request</button>
+  </form>
+</div>

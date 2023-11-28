@@ -66,6 +66,10 @@
               "browserTarget": "freight-quote-ui:build:development"
             }
           },
+          "options": {
+            "browserTarget": "freight-quote-ui:build",
+            "proxyConfig": "proxy.conf.json"
+          },
           "defaultConfiguration": "development"
         },
         "extract-i18n": {
@@ -94,5 +98,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }
