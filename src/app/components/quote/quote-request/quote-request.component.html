@@ -1,34 +1,135 @@
 <!-- quote-request.component.html -->
 
-<div class="quote-request-container">
-  <h2>Submit Spot Freight Quote Request</h2>
+<div class="quote-request-form">
+  <h2>Request a Freight Quote</h2>
 
-  <form (ngSubmit)="onSubmit()">
-    <div class="form-group">
-      <label for="originLocation">Origin Location</label>
-      <input type="text" id="originLocation" name="originLocation" [(ngModel)]="quote.originLocation" required>
-    </div>
+  <!-- Origin and Destination Details -->
+  <div class="form-group">
+    <label for="origin">Origin:</label>
+    <input type="text" id="origin" [(ngModel)]="quote.origin" name="origin" required>
+  </div>
 
-    <div class="form-group">
-      <label for="destinationLocation">Destination Location</label>
-      <input type="text" id="destinationLocation" name="destinationLocation" [(ngModel)]="quote.destinationLocation" required>
-    </div>
+  <div class="form-group">
+    <label for="destination">Destination:</label>
+    <input type="text" id="destination" [(ngModel)]="quote.destination" name="destination" required>
+  </div>
 
-    <div class="form-group">
-      <label for="cargoType">Cargo Type</label>
-      <input type="text" id="cargoType" name="cargoType" [(ngModel)]="quote.cargoType" required>
-    </div>
+  <!-- Shipment Details -->
+  <div class="form-group">
+    <label for="cargoType">Cargo Type:</label>
+    <input type="text" id="cargoType" [(ngModel)]="quote.cargoType" name="cargoType" required>
+  </div>
 
-    <div class="form-group">
-      <label for="quantity">Quantity</label>
-      <input type="number" id="quantity" name="quantity" [(ngModel)]="quote.quantity" required>
-    </div>
+  <div class="form-group">
+    <label for="weight">Weight (kg):</label>
+    <input type="number" id="weight" [(ngModel)]="quote.weight" name="weight" required>
+  </div>
 
-    <div class="form-group">
-      <label for="specialRequirements">Special Requirements</label>
-      <textarea id="specialRequirements" name="specialRequirements" [(ngModel)]="quote.specialRequirements"></textarea>
-    </div>
+  <div class="form-group">
+    <label for="dimensions">Dimensions (length, width, height):</label>
+    <input type="text" id="dimensions" [(ngModel)]="quote.dimensions" name="dimensions" required>
+  </div>
 
-    <button type="submit">Submit Request</button>
-  </form>
+  <div class="form-group">
+    <label for="units">Number of Units:</label>
+    <input type="number" id="units" [(ngModel)]="quote.units" name="units" required>
+  </div>
+
+  <div class="form-group">
+    <label for="packaging">Packaging Type:</label>
+    <input type="text" id="packaging" [(ngModel)]="quote.packaging" name="packaging" required>
+  </div>
+
+  <div class="form-group">
+    <label for="hazardous">Hazardous Material:</label>
+    <input type="checkbox" id="hazardous" [(ngModel)]="quote.hazardous" name="hazardous">
+  </div>
+
+  <div class="form-group">
+    <label for="mode">Transportation Mode:</label>
+    <input type="text" id="mode" [(ngModel)]="quote.mode" name="mode" required>
+  </div>
+
+  <!-- Service Requirements -->
+  <div class="form-group">
+    <label for="transitTime">Desired Transit Time:</label>
+    <input type="text" id="transitTime" [(ngModel)]="quote.transitTime" name="transitTime" required>
+  </div>
+
+  <div class="form-group">
+    <label for="specialHandling">Special Handling Instructions:</label>
+    <input type="text" id="specialHandling" [(ngModel)]="quote.specialHandling" name="specialHandling" required>
+  </div>
+
+  <div class="form-group">
+    <label for="temperature">Temperature Control Requirements:</label>
+    <input type="text" id="temperature" [(ngModel)]="quote.temperature" name="temperature" required>
+  </div>
+
+  <div class="form-group">
+    <label for="customsInfo">Customs Clearance Details:</label>
+    <input type="text" id="customsInfo" [(ngModel)]="quote.customsInfo" name="customsInfo" required>
+  </div>
+
+  <!-- Dates and Times -->
+  <div class="form-group">
+    <label for="pickupDate">Desired Pickup Date and Time:</label>
+    <input type="text" id="pickupDate" [(ngModel)]="quote.pickupDate" name="pickupDate" required>
+  </div>
+
+  <div class="form-group">
+    <label for="deliveryDate">Desired Delivery Date and Time:</label>
+    <input type="text" id="deliveryDate" [(ngModel)]="quote.deliveryDate" name="deliveryDate" required>
+  </div>
+
+  <!-- Accessorial Services -->
+  <div class="form-group">
+    <label for="accessorials">Additional Services Required:</label>
+    <input type="text" id="accessorials" [(ngModel)]="quote.accessorials" name="accessorials" required>
+  </div>
+
+  <!-- Insurance Requirements -->
+  <div class="form-group">
+    <label for="insurance">Insurance Coverage Required:</label>
+    <input type="checkbox" id="insurance" [(ngModel)]="quote.insurance" name="insurance">
+  </div>
+
+  <div class="form-group">
+    <label for="insuranceAmount">Desired Insurance Coverage Amount:</label>
+    <input type="number" id="insuranceAmount" [(ngModel)]="quote.insuranceAmount" name="insuranceAmount" required>
+  </div>
+
+  <!-- Incoterms and Payment Terms -->
+  <div class="form-group">
+    <label for="incoterms">Incoterms:</label>
+    <input type="text" id="incoterms" [(ngModel)]="quote.incoterms" name="incoterms" required>
+  </div>
+
+  <div class="form-group">
+    <label for="paymentTerms">Terms of Payment:</label>
+    <input type="text" id="paymentTerms" [(ngModel)]="quote.paymentTerms" name="paymentTerms" required>
+  </div>
+
+  <!-- Carrier Preferences -->
+  <div class="form-group">
+    <label for="carrier">Preferred Carrier:</label>
+    <input type="text" id="carrier" [(ngModel)]="quote.carrier" name="carrier" required>
+  </div>
+
+  <!-- Contact Information -->
+  <div class="form-group">
+    <label for="shipperContact">Shipper Contact:</label>
+    <input type="text" id="shipperContact" [(ngModel)]="quote.shipperContact" name="shipperContact" required>
+  </div>
+
+  <div class="form-group">
+    <label for="consigneeContact">Consignee Contact:</label>
+    <input type="text" id="consigneeContact" [(ngModel)]="quote.consigneeContact" name="consigneeContact" required>
+  </div>
+
+  <!-- Buttons for submitting the form or resetting it -->
+  <div class="form-actions">
+    <button type="submit" (click)="onSubmit()">Submit</button>
+    <button type="button" (click)="resetForm()">Reset</button>
+  </div>
 </div>

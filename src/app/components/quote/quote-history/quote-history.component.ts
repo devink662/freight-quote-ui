@@ -17,7 +17,7 @@ export class QuoteHistoryComponent implements OnInit {
 
   ngOnInit() {
     // Load quote history data on component initialization
-    this.loadQuoteHistory();
+    // this.loadQuoteHistory();
     this.loadQuotes();
   }
 

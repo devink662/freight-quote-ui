@@ -1,12 +1,13 @@
 /* quote-history.component.css */
 
 .quote-history-container {
-  max-width: 800px;
+  max-width: 90%;
   margin: auto;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
   background-color: #f9f9f9;
+  overflow: scroll;
 }
 
 table {

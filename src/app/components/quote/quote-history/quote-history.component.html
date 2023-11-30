@@ -1,7 +1,7 @@
 <!-- quote-history.component.html -->
 
 <div class="quote-history-container">
-  <h2>Quote History</h2>
+  <h2>Quote Maintenance</h2>
 
   <table>
     <thead>
@@ -18,8 +18,8 @@
     <tbody>
     <tr *ngFor="let quote of quotes">
       <td>{{ quote.id }}</td>
-      <td>{{ quote.originLocation }}</td>
-      <td>{{ quote.destinationLocation }}</td>
+      <td>{{ quote.origin }}</td>
+      <td>{{ quote.destination }}</td>
       <td>{{ quote.cargoType }}</td>
       <td>{{ quote.quantity }}</td>
       <td>{{ quote.status }}</td>
